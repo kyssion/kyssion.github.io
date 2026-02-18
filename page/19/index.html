@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="../../css/mermaid.css">
 
   <link rel="stylesheet" href="../../css/vs-code.css">
-  <link rel="stylesheet" href="../../css/post.css?v=1771424058468">
+  <link rel="stylesheet" href="../../css/post.css?v=1771424192257">
   <link rel="stylesheet" href="../../css/tag.css">
   <link rel="stylesheet" href="../../css/categories.css">
   <link rel="stylesheet" href="../../css/archive.css">
@@ -346,10 +346,6 @@
       <div class="section-content">
           <div class="file">
             <i class="fas fa-file-code"></i>
-            <a href="../../2026/02/18/hello-world/">Hello World</a>
-          </div>
-          <div class="file">
-            <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-1--%E5%9F%BA%E7%A1%80/">docker(1)-基础</a>
           </div>
           <div class="file">
@@ -363,6 +359,10 @@
           <div class="file">
             <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-4--dockerfile%E6%8C%87%E4%BB%A4/">docker(4)-dockerfile指令</a>
+          </div>
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../2024/12/31/git-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">git-基本使用教程</a>
           </div>
       </div>
     </div>
@@ -528,47 +528,6 @@
     
     <div class="content-area">
       <div class="posts-container">
-          
-          <div class="post-card">
-            <div class="post-card-content">
-              <div class="post-card-top">
-                <div class="post-card-info">
-                  <div class="post-header">
-                    <i class="fas fa-file-alt"></i>
-                    <span class="post-title">
-                      <a href="../../2024/12/31/kafka_consumer/">kafka_consumer</a>
-                      
-                    </span>
-                  </div>
-                  
-                  <div class="post-meta">
-                    <span class="date">
-                      <i class="fas fa-calendar-alt"></i>
-                      2024-12-31
-                    </span>
-                      <span class="category">
-                        <i class="fas fa-folder"></i>
-                        <a class="category-link" href="../../categories/kafka/">kafka</a>
-                      </span>
-                  </div>
-                </div>
-                
-              </div>
-              
-              <div class="post-excerpt">
-                kafka consumerkafka 消费者与消费组消费者（Consumer）负责订阅Kafka中的主题（Topic），并且从订阅的主题上拉取消息。与其他一些消息中间件不同的是：在Kafka的消费理念中还有一层消费组（Consumer Group）的概念，每个消费者都有一个对应的消费组。当消息发布到主题后，只会被投递给订阅它的每个消费组中的一个消费者
-kafka这块的模型大致是这种结构：
-主题 ...
-              </div>
-              
-              <div class="post-footer">
-                <a href="../../2024/12/31/kafka_consumer/" class="read-more">
-                  <i class="fas fa-code"></i>
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
           
           <div class="post-card has-thumbnail">
             <div class="post-card-content">
@@ -980,6 +939,54 @@ Con...
               </div>
             </div>
           </div>
+          
+          <div class="post-card">
+            <div class="post-card-content">
+              <div class="post-card-top">
+                <div class="post-card-info">
+                  <div class="post-header">
+                    <i class="fas fa-file-alt"></i>
+                    <span class="post-title">
+                      <a href="../../2024/12/31/mysql-jdbc-%E9%A9%B1%E5%8A%A8%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3-2-%E6%89%B9%E5%A4%84%E7%90%86%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">mysql-jdbc-驱动使用详解(2)批处理性能优化</a>
+                      
+                    </span>
+                  </div>
+                  
+                  <div class="post-meta">
+                    <span class="date">
+                      <i class="fas fa-calendar-alt"></i>
+                      2024-12-31
+                    </span>
+                      <span class="category">
+                        <i class="fas fa-folder"></i>
+                        <a class="category-link" href="../../categories/mysql/">mysql</a>
+                      </span>
+                  </div>
+                </div>
+                
+              </div>
+              
+              <div class="post-excerpt">
+                java-jdbc驱动使用详解（二）批处理性能优化
+在使用mysql的时候或多或少会遇见大量的批操作的情况这里整理一下经验
+
+这里我们对三种情况进行测试
+
+性能优化的方法，在url请求中加上这些参数，useServerPrepStmts&#x3D;true&amp;cachePrepStmts&#x3D;true&amp;rewriteBatchedStatements&#x3D;true
+
+
+
+...
+              </div>
+              
+              <div class="post-footer">
+                <a href="../../2024/12/31/mysql-jdbc-%E9%A9%B1%E5%8A%A8%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3-2-%E6%89%B9%E5%A4%84%E7%90%86%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="read-more">
+                  <i class="fas fa-code"></i>
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
       </div>
       
       
@@ -1261,7 +1268,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../../js/search.js"></script>
 <script src="../../js/theme-switch.js"></script>
 
-<script src="../../js/password-protect.js?v=1771424058469"></script>
+<script src="../../js/password-protect.js?v=1771424192257"></script>
 
     <script>
       // 移动端菜单切换

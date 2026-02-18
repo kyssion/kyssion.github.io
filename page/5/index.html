@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="../../css/mermaid.css">
 
   <link rel="stylesheet" href="../../css/vs-code.css">
-  <link rel="stylesheet" href="../../css/post.css?v=1771424058461">
+  <link rel="stylesheet" href="../../css/post.css?v=1771424192253">
   <link rel="stylesheet" href="../../css/tag.css">
   <link rel="stylesheet" href="../../css/categories.css">
   <link rel="stylesheet" href="../../css/archive.css">
@@ -346,10 +346,6 @@
       <div class="section-content">
           <div class="file">
             <i class="fas fa-file-code"></i>
-            <a href="../../2026/02/18/hello-world/">Hello World</a>
-          </div>
-          <div class="file">
-            <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-1--%E5%9F%BA%E7%A1%80/">docker(1)-基础</a>
           </div>
           <div class="file">
@@ -363,6 +359,10 @@
           <div class="file">
             <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-4--dockerfile%E6%8C%87%E4%BB%A4/">docker(4)-dockerfile指令</a>
+          </div>
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../2024/12/31/git-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">git-基本使用教程</a>
           </div>
       </div>
     </div>
@@ -528,55 +528,6 @@
     
     <div class="content-area">
       <div class="posts-container">
-          
-          <div class="post-card has-thumbnail">
-            <div class="post-card-content">
-              <div class="post-card-top">
-                <div class="post-card-info">
-                  <div class="post-header">
-                    <i class="fas fa-file-alt"></i>
-                    <span class="post-title">
-                      <a href="../../2024/12/31/gradle-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-4--%E6%89%A7%E8%A1%8C%E6%B5%8B%E8%AF%95%E6%A0%B7%E4%BE%8B/">gradle-学习笔记(4)-执行测试样例</a>
-                      
-                    </span>
-                  </div>
-                  
-                  <div class="post-meta">
-                    <span class="date">
-                      <i class="fas fa-calendar-alt"></i>
-                      2024-12-31
-                    </span>
-                      <span class="category">
-                        <i class="fas fa-folder"></i>
-                        <a class="category-link" href="../../categories/java/">java</a>
-                      </span>
-                  </div>
-                </div>
-                
-                  <div class="post-thumbnail">
-                    <a href="../../2024/12/31/gradle-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-4--%E6%89%A7%E8%A1%8C%E6%B5%8B%E8%AF%95%E6%A0%B7%E4%BE%8B/">
-                      <img src="/images/blogimg//blogimg/gradle/1.png" alt="gradle-学习笔记(4)-执行测试样例" loading="lazy">
-                    </a>
-                  </div>
-                
-              </div>
-              
-              <div class="post-excerpt">
-                gradle可以自动的执行测试样例，前提是要求测试的包名和要测试的类是一一对应的
-当项目中编写了Test目录中的内容的时候，然后指定的测试样例写法正确，当运行test task的时候，gradle将会自动的执行对应的测试，并且在build的build 文件夹中的reports 以html的形式，输出对应的结果
-
-
-...
-              </div>
-              
-              <div class="post-footer">
-                <a href="../../2024/12/31/gradle-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-4--%E6%89%A7%E8%A1%8C%E6%B5%8B%E8%AF%95%E6%A0%B7%E4%BE%8B/" class="read-more">
-                  <i class="fas fa-code"></i>
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
           
           <div class="post-card has-thumbnail">
             <div class="post-card-content">
@@ -975,6 +926,51 @@ gradle的守护进程原理 : gradle使用守护进程的原理非常简单,第�
               </div>
             </div>
           </div>
+          
+          <div class="post-card">
+            <div class="post-card-content">
+              <div class="post-card-top">
+                <div class="post-card-info">
+                  <div class="post-header">
+                    <i class="fas fa-file-alt"></i>
+                    <span class="post-title">
+                      <a href="../../2024/12/31/gradle-%E8%BF%9B%E9%98%B6-7--gradle%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">gradle-进阶(7)-gradle文件操作</a>
+                      
+                    </span>
+                  </div>
+                  
+                  <div class="post-meta">
+                    <span class="date">
+                      <i class="fas fa-calendar-alt"></i>
+                      2024-12-31
+                    </span>
+                      <span class="category">
+                        <i class="fas fa-folder"></i>
+                        <a class="category-link" href="../../categories/java/">java</a>
+                      </span>
+                  </div>
+                </div>
+                
+              </div>
+              
+              <div class="post-excerpt">
+                其实对于任何一种构建工具来说，针对文件操作的功能是必不可少的，这里整理一下gradle针对文件提供的功能
+gradle 中的文件路径
+gradle 的 Project.file方法
+
+作用： 指定单个文件或者目录的位置，解析规则（相对路径相对于项目目录进行解析，而绝对路径保持不变）。
+例子：
+123456// 使用相对路径File configFile = file(&#x27;src/confi...
+              </div>
+              
+              <div class="post-footer">
+                <a href="../../2024/12/31/gradle-%E8%BF%9B%E9%98%B6-7--gradle%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="read-more">
+                  <i class="fas fa-code"></i>
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
       </div>
       
       
@@ -1256,7 +1252,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../../js/search.js"></script>
 <script src="../../js/theme-switch.js"></script>
 
-<script src="../../js/password-protect.js?v=1771424058461"></script>
+<script src="../../js/password-protect.js?v=1771424192253"></script>
 
     <script>
       // 移动端菜单切换

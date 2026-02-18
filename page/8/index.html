@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="../../css/mermaid.css">
 
   <link rel="stylesheet" href="../../css/vs-code.css">
-  <link rel="stylesheet" href="../../css/post.css?v=1771424058463">
+  <link rel="stylesheet" href="../../css/post.css?v=1771424192251">
   <link rel="stylesheet" href="../../css/tag.css">
   <link rel="stylesheet" href="../../css/categories.css">
   <link rel="stylesheet" href="../../css/archive.css">
@@ -346,10 +346,6 @@
       <div class="section-content">
           <div class="file">
             <i class="fas fa-file-code"></i>
-            <a href="../../2026/02/18/hello-world/">Hello World</a>
-          </div>
-          <div class="file">
-            <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-1--%E5%9F%BA%E7%A1%80/">docker(1)-基础</a>
           </div>
           <div class="file">
@@ -363,6 +359,10 @@
           <div class="file">
             <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-4--dockerfile%E6%8C%87%E4%BB%A4/">docker(4)-dockerfile指令</a>
+          </div>
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../2024/12/31/git-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">git-基本使用教程</a>
           </div>
       </div>
     </div>
@@ -528,56 +528,6 @@
     
     <div class="content-area">
       <div class="posts-container">
-          
-          <div class="post-card has-thumbnail">
-            <div class="post-card-content">
-              <div class="post-card-top">
-                <div class="post-card-info">
-                  <div class="post-header">
-                    <i class="fas fa-file-alt"></i>
-                    <span class="post-title">
-                      <a href="../../2024/12/31/java-%E5%85%B3%E4%BA%8Esystem-gc--%E4%B8%8Efinalize--%E6%96%B9%E6%B3%95/">java-关于system.gc()与finalize()方法</a>
-                      
-                    </span>
-                  </div>
-                  
-                  <div class="post-meta">
-                    <span class="date">
-                      <i class="fas fa-calendar-alt"></i>
-                      2024-12-31
-                    </span>
-                      <span class="category">
-                        <i class="fas fa-folder"></i>
-                        <a class="category-link" href="../../categories/java/">java</a>
-                      </span>
-                  </div>
-                </div>
-                
-                  <div class="post-thumbnail">
-                    <a href="../../2024/12/31/java-%E5%85%B3%E4%BA%8Esystem-gc--%E4%B8%8Efinalize--%E6%96%B9%E6%B3%95/">
-                      <img src="/images/blogimg//blogimg/java/10.png" alt="java-关于system.gc()与finalize()方法" loading="lazy">
-                    </a>
-                  </div>
-                
-              </div>
-              
-              <div class="post-excerpt">
-                1. finalize的作用
-finalize()是Object的protected方法，子类可以覆盖该方法以实现资源清理工作，GC在回收对象之前调用该方法。
-
-finalize()与C++中的析构函数不是对应的。C++中的析构函数调用的时机是确定的（对象离开作用域或delete掉），但Java中的finalize的调用具有不确定性
-
-不建议用finalize方法完成“非内存资源”的清理工作，但建...
-              </div>
-              
-              <div class="post-footer">
-                <a href="../../2024/12/31/java-%E5%85%B3%E4%BA%8Esystem-gc--%E4%B8%8Efinalize--%E6%96%B9%E6%B3%95/" class="read-more">
-                  <i class="fas fa-code"></i>
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
           
           <div class="post-card">
             <div class="post-card-content">
@@ -974,6 +924,59 @@ Java异常层次结构图如下图所示：
               </div>
             </div>
           </div>
+          
+          <div class="post-card has-thumbnail">
+            <div class="post-card-content">
+              <div class="post-card-top">
+                <div class="post-card-info">
+                  <div class="post-header">
+                    <i class="fas fa-file-alt"></i>
+                    <span class="post-title">
+                      <a href="../../2024/12/31/java-%E7%BD%91%E8%B7%AF-nio-%E4%BB%8E%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90javaNIO%E7%9A%84%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B-%E4%B8%80-/">java-网路-nio-从源代码分析javaNIO的运行过程(一)</a>
+                      
+                    </span>
+                  </div>
+                  
+                  <div class="post-meta">
+                    <span class="date">
+                      <i class="fas fa-calendar-alt"></i>
+                      2024-12-31
+                    </span>
+                      <span class="category">
+                        <i class="fas fa-folder"></i>
+                        <a class="category-link" href="../../categories/java/">java</a>
+                      </span>
+                  </div>
+                </div>
+                
+                  <div class="post-thumbnail">
+                    <a href="../../2024/12/31/java-%E7%BD%91%E8%B7%AF-nio-%E4%BB%8E%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90javaNIO%E7%9A%84%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B-%E4%B8%80-/">
+                      <img src="/images/blogimg//blogimg/nio/1.png" alt="java-网路-nio-从源代码分析javaNIO的运行过程(一)" loading="lazy">
+                    </a>
+                  </div>
+                
+              </div>
+              
+              <div class="post-excerpt">
+                这一节解析一下 java NIO中 ServerSocketChannel创建的过程
+channel  在java中表示通道，是用来进行数据的有效传输
+
+广义上来说通道可以被分为两类：File I&#x2F;O和Stream I&#x2F;O，也就是文件通道和套接字通道
+如果分的更细致一点则是：
+
+FileChannel 从文件读写数据
+SocketChannel 通过TCP读写网络数据
+Serv...
+              </div>
+              
+              <div class="post-footer">
+                <a href="../../2024/12/31/java-%E7%BD%91%E8%B7%AF-nio-%E4%BB%8E%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90javaNIO%E7%9A%84%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B-%E4%B8%80-/" class="read-more">
+                  <i class="fas fa-code"></i>
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
       </div>
       
       
@@ -1255,7 +1258,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../../js/search.js"></script>
 <script src="../../js/theme-switch.js"></script>
 
-<script src="../../js/password-protect.js?v=1771424058464"></script>
+<script src="../../js/password-protect.js?v=1771424192251"></script>
 
     <script>
       // 移动端菜单切换

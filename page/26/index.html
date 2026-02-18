@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="../../css/mermaid.css">
 
   <link rel="stylesheet" href="../../css/vs-code.css">
-  <link rel="stylesheet" href="../../css/post.css?v=1771424058471">
+  <link rel="stylesheet" href="../../css/post.css?v=1771424192260">
   <link rel="stylesheet" href="../../css/tag.css">
   <link rel="stylesheet" href="../../css/categories.css">
   <link rel="stylesheet" href="../../css/archive.css">
@@ -346,10 +346,6 @@
       <div class="section-content">
           <div class="file">
             <i class="fas fa-file-code"></i>
-            <a href="../../2026/02/18/hello-world/">Hello World</a>
-          </div>
-          <div class="file">
-            <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-1--%E5%9F%BA%E7%A1%80/">docker(1)-基础</a>
           </div>
           <div class="file">
@@ -363,6 +359,10 @@
           <div class="file">
             <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-4--dockerfile%E6%8C%87%E4%BB%A4/">docker(4)-dockerfile指令</a>
+          </div>
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../2024/12/31/git-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">git-基本使用教程</a>
           </div>
       </div>
     </div>
@@ -528,49 +528,6 @@
     
     <div class="content-area">
       <div class="posts-container">
-          
-          <div class="post-card">
-            <div class="post-card-content">
-              <div class="post-card-top">
-                <div class="post-card-info">
-                  <div class="post-header">
-                    <i class="fas fa-file-alt"></i>
-                    <span class="post-title">
-                      <a href="../../2024/12/31/%E5%BA%93%E5%AD%98%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/">库存问题处理上的一些思考</a>
-                      
-                    </span>
-                  </div>
-                  
-                  <div class="post-meta">
-                    <span class="date">
-                      <i class="fas fa-calendar-alt"></i>
-                      2024-12-31
-                    </span>
-                      <span class="category">
-                        <i class="fas fa-folder"></i>
-                        <a class="category-link" href="../../categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">架构设计</a>
-                      </span>
-                  </div>
-                </div>
-                
-              </div>
-              
-              <div class="post-excerpt">
-                思考
-对于库存管理来说，最重要的库存的分配与扣减
-1）、最优仓调度逻辑如果一物一仓（一个sku只在一个仓库有货），这种逻辑比较简单，扣减响应的仓库库存即可。
-实际上，一个sku可能会分布在多个仓库中，此时需要根据物流时效，仓库等级去扣减仓库中商品。
-1、 查询时，先筛选出有库存的仓库。2、 将收货地址与这些仓库的一级配送区域（24小时到达）匹配，若没有再去匹配二级区域（2日到达），以此列推，筛选出...
-              </div>
-              
-              <div class="post-footer">
-                <a href="../../2024/12/31/%E5%BA%93%E5%AD%98%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83/" class="read-more">
-                  <i class="fas fa-code"></i>
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
           
           <div class="post-card has-thumbnail">
             <div class="post-card-content">
@@ -996,6 +953,51 @@ plantUML 流程图...
               </div>
             </div>
           </div>
+          
+          <div class="post-card">
+            <div class="post-card-content">
+              <div class="post-card-top">
+                <div class="post-card-info">
+                  <div class="post-header">
+                    <i class="fas fa-file-alt"></i>
+                    <span class="post-title">
+                      <a href="../../2024/12/31/%E4%BA%9B%E4%B8%9A%E5%8A%A1%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8E%9F%E5%88%99/">些业务代码的一些原则</a>
+                      
+                    </span>
+                  </div>
+                  
+                  <div class="post-meta">
+                    <span class="date">
+                      <i class="fas fa-calendar-alt"></i>
+                      2024-12-31
+                    </span>
+                      <span class="category">
+                        <i class="fas fa-folder"></i>
+                        <a class="category-link" href="../../categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">软件开发</a>
+                      </span>
+                  </div>
+                </div>
+                
+              </div>
+              
+              <div class="post-excerpt">
+                
+接口是不是要幂等
+数据库 update delete select 等范围是否正确， 范围是否正确
+兜底的处理方法是否有运行 - defer try catch等
+nil指针处理方法是否是正常的
+
+...
+              </div>
+              
+              <div class="post-footer">
+                <a href="../../2024/12/31/%E4%BA%9B%E4%B8%9A%E5%8A%A1%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8E%9F%E5%88%99/" class="read-more">
+                  <i class="fas fa-code"></i>
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
       </div>
       
       
@@ -1277,7 +1279,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../../js/search.js"></script>
 <script src="../../js/theme-switch.js"></script>
 
-<script src="../../js/password-protect.js?v=1771424058472"></script>
+<script src="../../js/password-protect.js?v=1771424192261"></script>
 
     <script>
       // 移动端菜单切换

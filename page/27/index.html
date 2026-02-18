@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="../../css/mermaid.css">
 
   <link rel="stylesheet" href="../../css/vs-code.css">
-  <link rel="stylesheet" href="../../css/post.css?v=1771424058472">
+  <link rel="stylesheet" href="../../css/post.css?v=1771424192261">
   <link rel="stylesheet" href="../../css/tag.css">
   <link rel="stylesheet" href="../../css/categories.css">
   <link rel="stylesheet" href="../../css/archive.css">
@@ -346,10 +346,6 @@
       <div class="section-content">
           <div class="file">
             <i class="fas fa-file-code"></i>
-            <a href="../../2026/02/18/hello-world/">Hello World</a>
-          </div>
-          <div class="file">
-            <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-1--%E5%9F%BA%E7%A1%80/">docker(1)-基础</a>
           </div>
           <div class="file">
@@ -363,6 +359,10 @@
           <div class="file">
             <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-4--dockerfile%E6%8C%87%E4%BB%A4/">docker(4)-dockerfile指令</a>
+          </div>
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../2024/12/31/git-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">git-基本使用教程</a>
           </div>
       </div>
     </div>
@@ -528,51 +528,6 @@
     
     <div class="content-area">
       <div class="posts-container">
-          
-          <div class="post-card">
-            <div class="post-card-content">
-              <div class="post-card-top">
-                <div class="post-card-info">
-                  <div class="post-header">
-                    <i class="fas fa-file-alt"></i>
-                    <span class="post-title">
-                      <a href="../../2024/12/31/%E4%BA%9B%E4%B8%9A%E5%8A%A1%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8E%9F%E5%88%99/">些业务代码的一些原则</a>
-                      
-                    </span>
-                  </div>
-                  
-                  <div class="post-meta">
-                    <span class="date">
-                      <i class="fas fa-calendar-alt"></i>
-                      2024-12-31
-                    </span>
-                      <span class="category">
-                        <i class="fas fa-folder"></i>
-                        <a class="category-link" href="../../categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">软件开发</a>
-                      </span>
-                  </div>
-                </div>
-                
-              </div>
-              
-              <div class="post-excerpt">
-                
-接口是不是要幂等
-数据库 update delete select 等范围是否正确， 范围是否正确
-兜底的处理方法是否有运行 - defer try catch等
-nil指针处理方法是否是正常的
-
-...
-              </div>
-              
-              <div class="post-footer">
-                <a href="../../2024/12/31/%E4%BA%9B%E4%B8%9A%E5%8A%A1%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8E%9F%E5%88%99/" class="read-more">
-                  <i class="fas fa-code"></i>
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
           
           <div class="post-card has-thumbnail">
             <div class="post-card-content">
@@ -1003,6 +958,56 @@ nil指针处理方法是否是正常的
               </div>
             </div>
           </div>
+          
+          <div class="post-card has-thumbnail">
+            <div class="post-card-content">
+              <div class="post-card-top">
+                <div class="post-card-info">
+                  <div class="post-header">
+                    <i class="fas fa-file-alt"></i>
+                    <span class="post-title">
+                      <a href="../../2024/12/31/GoF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-9--Bridge/">GoF设计模式(9)-Bridge</a>
+                      
+                    </span>
+                  </div>
+                  
+                  <div class="post-meta">
+                    <span class="date">
+                      <i class="fas fa-calendar-alt"></i>
+                      2024-12-31
+                    </span>
+                      <span class="category">
+                        <i class="fas fa-folder"></i>
+                        <a class="category-link" href="../../categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/">软件开发</a>
+                      </span>
+                  </div>
+                </div>
+                
+                  <div class="post-thumbnail">
+                    <a href="../../2024/12/31/GoF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-9--Bridge/">
+                      <img src="/images/blogimg//blogimg/GAF/9.png" alt="GoF设计模式(9)-Bridge" loading="lazy">
+                    </a>
+                  </div>
+                
+              </div>
+              
+              <div class="post-excerpt">
+                桥接模式桥接模式我的感觉这个模式就是使用模板方法模式和适配器的模式的结合。
+在GoF书中，将类的扩展分为，类的功能层次划分和类的结构层次划分
+
+类的功能层次划分： 通过继承来对添加相关的功能，其实也就是外部调用的实际方法
+
+类的实现层次划分：父类（接口或者抽象类），通过继承将这个作为一个特殊的实现类适配不同的情况，比如说一个类定义了一个操作系统底层的接口，其子类通过实现，支持了windowns和l...
+              </div>
+              
+              <div class="post-footer">
+                <a href="../../2024/12/31/GoF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-9--Bridge/" class="read-more">
+                  <i class="fas fa-code"></i>
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
       </div>
       
       
@@ -1284,7 +1289,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../../js/search.js"></script>
 <script src="../../js/theme-switch.js"></script>
 
-<script src="../../js/password-protect.js?v=1771424058472"></script>
+<script src="../../js/password-protect.js?v=1771424192261"></script>
 
     <script>
       // 移动端菜单切换

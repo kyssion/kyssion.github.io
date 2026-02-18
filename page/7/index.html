@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="../../css/mermaid.css">
 
   <link rel="stylesheet" href="../../css/vs-code.css">
-  <link rel="stylesheet" href="../../css/post.css?v=1771424058462">
+  <link rel="stylesheet" href="../../css/post.css?v=1771424192250">
   <link rel="stylesheet" href="../../css/tag.css">
   <link rel="stylesheet" href="../../css/categories.css">
   <link rel="stylesheet" href="../../css/archive.css">
@@ -346,10 +346,6 @@
       <div class="section-content">
           <div class="file">
             <i class="fas fa-file-code"></i>
-            <a href="../../2026/02/18/hello-world/">Hello World</a>
-          </div>
-          <div class="file">
-            <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-1--%E5%9F%BA%E7%A1%80/">docker(1)-基础</a>
           </div>
           <div class="file">
@@ -363,6 +359,10 @@
           <div class="file">
             <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-4--dockerfile%E6%8C%87%E4%BB%A4/">docker(4)-dockerfile指令</a>
+          </div>
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../2024/12/31/git-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">git-基本使用教程</a>
           </div>
       </div>
     </div>
@@ -528,47 +528,6 @@
     
     <div class="content-area">
       <div class="posts-container">
-          
-          <div class="post-card">
-            <div class="post-card-content">
-              <div class="post-card-top">
-                <div class="post-card-info">
-                  <div class="post-header">
-                    <i class="fas fa-file-alt"></i>
-                    <span class="post-title">
-                      <a href="../../2024/12/31/java-classpath%E7%9A%84%E7%90%86%E8%A7%A3/">java-classpath的理解</a>
-                      
-                    </span>
-                  </div>
-                  
-                  <div class="post-meta">
-                    <span class="date">
-                      <i class="fas fa-calendar-alt"></i>
-                      2024-12-31
-                    </span>
-                      <span class="category">
-                        <i class="fas fa-folder"></i>
-                        <a class="category-link" href="../../categories/java/">java</a>
-                      </span>
-                  </div>
-                </div>
-                
-              </div>
-              
-              <div class="post-excerpt">
-                这次写这一片篇文章的起因是对老大搭建的底层框架存在怀疑结果然后自己照着老大的方法运行竟然可以成功原因的费解。因此在这里记录一下自己的疑问解惑过程。
-classpath到底是啥我的理解classpath 其实是 java 的一种虚拟的文件目录结构，java通过包名（相当于路径名称），针对每一个classpath地址（java支持多个classpath地址）进行资源管理的一种抽象路径
-1. 针对于资源...
-              </div>
-              
-              <div class="post-footer">
-                <a href="../../2024/12/31/java-classpath%E7%9A%84%E7%90%86%E8%A7%A3/" class="read-more">
-                  <i class="fas fa-code"></i>
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
           
           <div class="post-card has-thumbnail">
             <div class="post-card-content">
@@ -957,6 +916,56 @@ response.setCharacterEncoding(“UTF-8”)&#x2F;&#x2F;作用是指定对服务�
               </div>
             </div>
           </div>
+          
+          <div class="post-card has-thumbnail">
+            <div class="post-card-content">
+              <div class="post-card-top">
+                <div class="post-card-info">
+                  <div class="post-header">
+                    <i class="fas fa-file-alt"></i>
+                    <span class="post-title">
+                      <a href="../../2024/12/31/java-%E5%85%B3%E4%BA%8Esystem-gc--%E4%B8%8Efinalize--%E6%96%B9%E6%B3%95/">java-关于system.gc()与finalize()方法</a>
+                      
+                    </span>
+                  </div>
+                  
+                  <div class="post-meta">
+                    <span class="date">
+                      <i class="fas fa-calendar-alt"></i>
+                      2024-12-31
+                    </span>
+                      <span class="category">
+                        <i class="fas fa-folder"></i>
+                        <a class="category-link" href="../../categories/java/">java</a>
+                      </span>
+                  </div>
+                </div>
+                
+                  <div class="post-thumbnail">
+                    <a href="../../2024/12/31/java-%E5%85%B3%E4%BA%8Esystem-gc--%E4%B8%8Efinalize--%E6%96%B9%E6%B3%95/">
+                      <img src="/images/blogimg//blogimg/java/10.png" alt="java-关于system.gc()与finalize()方法" loading="lazy">
+                    </a>
+                  </div>
+                
+              </div>
+              
+              <div class="post-excerpt">
+                1. finalize的作用
+finalize()是Object的protected方法，子类可以覆盖该方法以实现资源清理工作，GC在回收对象之前调用该方法。
+
+finalize()与C++中的析构函数不是对应的。C++中的析构函数调用的时机是确定的（对象离开作用域或delete掉），但Java中的finalize的调用具有不确定性
+
+不建议用finalize方法完成“非内存资源”的清理工作，但建...
+              </div>
+              
+              <div class="post-footer">
+                <a href="../../2024/12/31/java-%E5%85%B3%E4%BA%8Esystem-gc--%E4%B8%8Efinalize--%E6%96%B9%E6%B3%95/" class="read-more">
+                  <i class="fas fa-code"></i>
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
       </div>
       
       
@@ -1238,7 +1247,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../../js/search.js"></script>
 <script src="../../js/theme-switch.js"></script>
 
-<script src="../../js/password-protect.js?v=1771424058462"></script>
+<script src="../../js/password-protect.js?v=1771424192250"></script>
 
     <script>
       // 移动端菜单切换

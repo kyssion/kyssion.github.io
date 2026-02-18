@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="../../css/mermaid.css">
 
   <link rel="stylesheet" href="../../css/vs-code.css">
-  <link rel="stylesheet" href="../../css/post.css?v=1771424058469">
+  <link rel="stylesheet" href="../../css/post.css?v=1771424192258">
   <link rel="stylesheet" href="../../css/tag.css">
   <link rel="stylesheet" href="../../css/categories.css">
   <link rel="stylesheet" href="../../css/archive.css">
@@ -346,10 +346,6 @@
       <div class="section-content">
           <div class="file">
             <i class="fas fa-file-code"></i>
-            <a href="../../2026/02/18/hello-world/">Hello World</a>
-          </div>
-          <div class="file">
-            <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-1--%E5%9F%BA%E7%A1%80/">docker(1)-基础</a>
           </div>
           <div class="file">
@@ -363,6 +359,10 @@
           <div class="file">
             <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-4--dockerfile%E6%8C%87%E4%BB%A4/">docker(4)-dockerfile指令</a>
+          </div>
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../2024/12/31/git-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">git-基本使用教程</a>
           </div>
       </div>
     </div>
@@ -528,50 +528,6 @@
     
     <div class="content-area">
       <div class="posts-container">
-          
-          <div class="post-card">
-            <div class="post-card-content">
-              <div class="post-card-top">
-                <div class="post-card-info">
-                  <div class="post-header">
-                    <i class="fas fa-file-alt"></i>
-                    <span class="post-title">
-                      <a href="../../2024/12/31/nginx-location%E6%98%A0%E5%B0%84%E5%9C%B0%E5%9D%80/">nginx-location映射地址</a>
-                      
-                    </span>
-                  </div>
-                  
-                  <div class="post-meta">
-                    <span class="date">
-                      <i class="fas fa-calendar-alt"></i>
-                      2024-12-31
-                    </span>
-                      <span class="category">
-                        <i class="fas fa-folder"></i>
-                        <a class="category-link" href="../../categories/nginx/">nginx</a>
-                      </span>
-                  </div>
-                </div>
-                
-              </div>
-              
-              <div class="post-excerpt">
-                nginx是一个非常棒的web代理服务器， 这里记录一下nginx 使用localtion字段，来进行访问控制的处理方法
-location匹配顺序
-“&#x3D;”前缀指令匹配，如果匹配成功，则停止其他匹配
-普通字符串指令匹配，顺序是从长到短，匹配成功的location如果使用^~，则停止其他匹配（正则匹配）
-正则表达式指令匹配，按照配置文件里的顺序，成功就停止其他匹配
-如果第三步中有匹配成功，则...
-              </div>
-              
-              <div class="post-footer">
-                <a href="../../2024/12/31/nginx-location%E6%98%A0%E5%B0%84%E5%9C%B0%E5%9D%80/" class="read-more">
-                  <i class="fas fa-code"></i>
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
           
           <div class="post-card has-thumbnail">
             <div class="post-card-content">
@@ -1007,6 +963,47 @@ Rust中的每个值都有一个变量，称为其所有者。一次只能有一�
               </div>
             </div>
           </div>
+          
+          <div class="post-card">
+            <div class="post-card-content">
+              <div class="post-card-top">
+                <div class="post-card-info">
+                  <div class="post-header">
+                    <i class="fas fa-file-alt"></i>
+                    <span class="post-title">
+                      <a href="../../2024/12/31/rust-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-4--%E6%9E%9A%E4%B8%BE%E5%92%8C%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/">rust-学习笔记(4)-枚举和模式匹配</a>
+                      
+                    </span>
+                  </div>
+                  
+                  <div class="post-meta">
+                    <span class="date">
+                      <i class="fas fa-calendar-alt"></i>
+                      2024-12-31
+                    </span>
+                      <span class="category">
+                        <i class="fas fa-folder"></i>
+                        <a class="category-link" href="../../categories/rust/">rust</a>
+                      </span>
+                  </div>
+                </div>
+                
+              </div>
+              
+              <div class="post-excerpt">
+                rust的枚举类型其实是一种定义(java中更像一种对象可以储存数据)
+rust 中的枚举是不能给定默认值的,枚举的类型一般是通过和struct连用来进行使用的
+枚举的定义和赋值12345678910111213141516171819enum IpAddrKind &#123;    V4,    V6,&#125;struct IpAddr &#123;    kind: IpAddrKind...
+              </div>
+              
+              <div class="post-footer">
+                <a href="../../2024/12/31/rust-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-4--%E6%9E%9A%E4%B8%BE%E5%92%8C%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/" class="read-more">
+                  <i class="fas fa-code"></i>
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
       </div>
       
       
@@ -1288,7 +1285,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../../js/search.js"></script>
 <script src="../../js/theme-switch.js"></script>
 
-<script src="../../js/password-protect.js?v=1771424058470"></script>
+<script src="../../js/password-protect.js?v=1771424192258"></script>
 
     <script>
       // 移动端菜单切换

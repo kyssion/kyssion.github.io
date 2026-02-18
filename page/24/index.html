@@ -46,7 +46,7 @@
   <link rel="stylesheet" href="../../css/mermaid.css">
 
   <link rel="stylesheet" href="../../css/vs-code.css">
-  <link rel="stylesheet" href="../../css/post.css?v=1771424058470">
+  <link rel="stylesheet" href="../../css/post.css?v=1771424192259">
   <link rel="stylesheet" href="../../css/tag.css">
   <link rel="stylesheet" href="../../css/categories.css">
   <link rel="stylesheet" href="../../css/archive.css">
@@ -346,10 +346,6 @@
       <div class="section-content">
           <div class="file">
             <i class="fas fa-file-code"></i>
-            <a href="../../2026/02/18/hello-world/">Hello World</a>
-          </div>
-          <div class="file">
-            <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-1--%E5%9F%BA%E7%A1%80/">docker(1)-基础</a>
           </div>
           <div class="file">
@@ -363,6 +359,10 @@
           <div class="file">
             <i class="fas fa-file-code"></i>
             <a href="../../2024/12/31/docker-4--dockerfile%E6%8C%87%E4%BB%A4/">docker(4)-dockerfile指令</a>
+          </div>
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../2024/12/31/git-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">git-基本使用教程</a>
           </div>
       </div>
     </div>
@@ -528,46 +528,6 @@
     
     <div class="content-area">
       <div class="posts-container">
-          
-          <div class="post-card">
-            <div class="post-card-content">
-              <div class="post-card-top">
-                <div class="post-card-info">
-                  <div class="post-header">
-                    <i class="fas fa-file-alt"></i>
-                    <span class="post-title">
-                      <a href="../../2024/12/31/java-%E4%BB%8Ejava%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%9D%A5%E7%9C%8Bjava%E7%9A%84%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97-1/">java-从java线程池来看java的阻塞队列</a>
-                      
-                    </span>
-                  </div>
-                  
-                  <div class="post-meta">
-                    <span class="date">
-                      <i class="fas fa-calendar-alt"></i>
-                      2024-12-31
-                    </span>
-                      <span class="category">
-                        <i class="fas fa-folder"></i>
-                        <a class="category-link" href="../../categories/%E6%96%B0%E5%8D%9A%E5%AE%A2/">新博客</a>
-                      </span>
-                  </div>
-                </div>
-                
-              </div>
-              
-              <div class="post-excerpt">
-                一说到java的阻塞队列，我们就会想到在java的jdk中的那么多的类
-1.ArrayDeque, （数组双端队列）2.PriorityQueue, （优先级队列）3.ConcurrentLinkedQueue, （基于链表的并发队列）4.DelayQueue, （延期阻塞队列）（阻塞队列实现了BlockingQueue接口）5.ArrayBlockingQueue, （基于数组的并发阻塞队列）6...
-              </div>
-              
-              <div class="post-footer">
-                <a href="../../2024/12/31/java-%E4%BB%8Ejava%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%9D%A5%E7%9C%8Bjava%E7%9A%84%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97-1/" class="read-more">
-                  <i class="fas fa-code"></i>
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
           
           <div class="post-card">
             <div class="post-card-content">
@@ -958,6 +918,49 @@ map类型有一些通用的逻辑操作,统一梳理
               </div>
             </div>
           </div>
+          
+          <div class="post-card">
+            <div class="post-card-content">
+              <div class="post-card-top">
+                <div class="post-card-info">
+                  <div class="post-header">
+                    <i class="fas fa-file-alt"></i>
+                    <span class="post-title">
+                      <a href="../../2024/12/31/spring%E6%9C%80%E6%A0%B8%E5%BF%83%E7%9A%84%E4%B8%9C%E8%A5%BF-spring%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%B0bean%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B/">spring最核心的东西-spring容器初始化到bean初始化的全过程</a>
+                      
+                    </span>
+                  </div>
+                  
+                  <div class="post-meta">
+                    <span class="date">
+                      <i class="fas fa-calendar-alt"></i>
+                      2024-12-31
+                    </span>
+                      <span class="category">
+                        <i class="fas fa-folder"></i>
+                        <a class="category-link" href="../../categories/%E6%96%B0%E5%8D%9A%E5%AE%A2/">新博客</a>
+                      </span>
+                  </div>
+                </div>
+                
+              </div>
+              
+              <div class="post-excerpt">
+                
+引申: 其实一开始不想写这篇文章的 , 奈何发现市面上的文章大部分都是一知半解 . 索性整理一篇文章方便以后阅读查阅
+
+这次就不一开始就长篇大论了 ,  先说一个问题 ,为啥我们要研究spring 中bean的初始化顺序
+为啥研究spring中javabean的初始化顺序spring 框架是个啥? -&gt; 本质上是一个IOC框架,解决依赖问题的玩意 , 依赖问题的核心承载点是啥? 是对象\j...
+              </div>
+              
+              <div class="post-footer">
+                <a href="../../2024/12/31/spring%E6%9C%80%E6%A0%B8%E5%BF%83%E7%9A%84%E4%B8%9C%E8%A5%BF-spring%E5%AE%B9%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%B0bean%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B/" class="read-more">
+                  <i class="fas fa-code"></i>
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
       </div>
       
       
@@ -1239,7 +1242,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../../js/search.js"></script>
 <script src="../../js/theme-switch.js"></script>
 
-<script src="../../js/password-protect.js?v=1771424058471"></script>
+<script src="../../js/password-protect.js?v=1771424192260"></script>
 
     <script>
       // 移动端菜单切换
