@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>广告（3）-广告相关的角色 | Hexo</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="A simple dark Hexo theme inspired by code.">
+  <meta name="keywords" content="广告">
+  <meta name="author" content="John Doe">
+  <link rel="canonical" href="http://example.com">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="广告（3）-广告相关的角色 | Hexo">
+  <meta property="og:description" content="A simple dark Hexo theme inspired by code.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://example.com">
+  <meta property="og:site_name" content="Hexo">
+  <meta property="article:published_time" content="2026-02-19T14:33:06.000Z">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="广告（3）-广告相关的角色 | Hexo">
+  <meta name="twitter:description" content="A simple dark Hexo theme inspired by code.">
+
+  <!-- Favicon 配置 -->
+  
+
+  <!-- 外部样式 - 统一使用 jsdelivr CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- 代码高亮样式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-dark.min.css" crossorigin="anonymous">
+
+  <!-- Mermaid.js 库 (defer加载) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" crossorigin="anonymous"></script>
+
+  <!-- 主题样式 -->
+  <link rel="stylesheet" href="../../../../css/theme-colors.css">
+  <link rel="stylesheet" href="../../../../css/main.css">
+  <link rel="stylesheet" href="../../../../css/code.css">
+  <link rel="stylesheet" href="../../../../css/code-custom.css">
+  <link rel="stylesheet" href="../../../../css/code-languages.css">
+  <link rel="stylesheet" href="../../../../css/mermaid.css">
+
+  <link rel="stylesheet" href="../../../../css/vs-code.css">
+  <link rel="stylesheet" href="../../../../css/post.css?v=1771511620562">
+  <link rel="stylesheet" href="../../../../css/tag.css">
+  <link rel="stylesheet" href="../../../../css/categories.css">
+  <link rel="stylesheet" href="../../../../css/archive.css">
+  <link rel="stylesheet" href="../../../../css/search.css">
+  <link rel="stylesheet" href="../../../../css/mobile.css">  <link rel="stylesheet" href="../../../../css/responsive.css">
+  <link rel="stylesheet" href="../../../../css/elements.css">
+
+  <!-- 添加 JetBrains Mono 字体 -->  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Add any custom head content here -->
+
+  <script defer src="../../../../js/explorer.js"></script>
+  <script defer src="../../../../js/code-enhance.js"></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+  <body>
+    <div class="wrapper">
+      <div class="mobile-menu-toggle" aria-label="Toggle sidebar menu" role="button" tabindex="0">
+        <i class="fas fa-bars"></i>
+      </div>
+      <!-- 移动端侧边栏遮罩层 -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+      <header class="vs-header">
+  <nav class="vs-nav">
+    <div class="nav-left">
+      <a href="/" class="nav-brand">
+        <i class="fas fa-terminal"></i>
+        Hexo
+      </a>
+    </div>
+    
+    <div class="nav-right">
+      <a href="/" class="nav-item ">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="/archives/" class="nav-item ">
+        <i class="fas fa-archive"></i>
+        <span>Archives</span>
+      </a>
+      <a href="/categories/" class="nav-item ">
+        <i class="fas fa-folder"></i>
+        <span>Categories</span>
+      </a>
+      <a href="/tags/" class="nav-item ">
+        <i class="fas fa-tags"></i>
+        <span>Tags</span>
+      </a>
+      <a href="/search/" class="nav-item ">
+        <i class="fas fa-search"></i>
+        <span>Search</span>
+      </a>
+      <a href="/about/" class="nav-item ">
+        <i class="fas fa-info-circle"></i>
+        <span>About</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  function smoothScroll(event, target) {
+    event.preventDefault();
+    const targetId = target.substring(target.indexOf('#') + 1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 50, // 调整偏移量
+        behavior: 'smooth'
+      });
+    } else {
+      window.location.href = target;
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.vs-header');
+    const nav = document.querySelector('.vs-nav');
+    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    nav.style.setProperty('--scroll-percent', `${scrollPercent}%`);
+    
+    if (window.scrollY > 0) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // 添加标签页切换动画
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      const ripple = document.createElement('span');
+      ripple.classList.add('nav-ripple');
+      this.appendChild(ripple);
+      
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      
+      setTimeout(() => ripple.remove(), 1000);
+    });
+  });
+</script>
+
+
+<div class="vscode-container">
+  <!-- 左侧资源管理器 -->
+  <div class="sidebar-explorer">
+    <!-- TOC导航 -->
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-list"></i>
+        <span>TABLE OF CONTENTS</span>
+      </div>
+      <div class="section-content">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B9%BF%E5%91%8A%E7%B3%BB%E7%BB%9F%E7%94%9F%E6%80%81%E8%A7%92%E8%89%B2%E5%88%97%E8%A1%A8"><span class="toc-text">广告系统生态角色列表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%9C%80%E6%B1%82%E4%BE%A7%E8%A7%92%E8%89%B2-Buy-Side"><span class="toc-text">一、需求侧角色 (Buy-Side)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BE%9B%E7%BB%99%E4%BE%A7%E8%A7%92%E8%89%B2-Sell-Side"><span class="toc-text">二、供给侧角色 (Sell-Side)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BA%A4%E6%98%93%E4%BE%A7%E8%A7%92%E8%89%B2-Trading-Exchange"><span class="toc-text">三、交易侧角色 (Trading&#x2F;Exchange)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%95%B0%E6%8D%AE%E5%B1%82%E8%A7%92%E8%89%B2-Data-Layer"><span class="toc-text">四、数据层角色 (Data Layer)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%B5%8B%E9%87%8F%E4%B8%8E%E5%BD%92%E5%9B%A0%E5%B1%82-Measurement-Attribution"><span class="toc-text">五、测量与归因层 (Measurement &amp; Attribution)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E9%AA%8C%E8%AF%81%E4%B8%8E%E5%AE%89%E5%85%A8%E5%B1%82-Verification-Safety"><span class="toc-text">六、验证与安全层 (Verification &amp; Safety)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E9%9A%90%E7%A7%81%E4%B8%8E%E5%90%88%E8%A7%84%E5%B1%82-Privacy-Compliance"><span class="toc-text">七、隐私与合规层 (Privacy &amp; Compliance)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%88%9B%E6%84%8F%E4%B8%8E%E5%86%85%E5%AE%B9%E5%B1%82-Creative-Content"><span class="toc-text">八、创意与内容层 (Creative &amp; Content)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E6%96%B0%E5%85%B4%E6%B8%A0%E9%81%93%E5%B1%82-Emerging-Channels"><span class="toc-text">九、新兴渠道层 (Emerging Channels)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%B1%82-Infrastructure"><span class="toc-text">十、基础设施层 (Infrastructure)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E6%9C%8D%E5%8A%A1%E4%B8%8E%E6%94%AF%E6%8C%81%E5%B1%82-Services-Support"><span class="toc-text">十一、服务与支持层 (Services &amp; Support)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E7%89%B9%E6%AE%8A%E7%94%9F%E6%80%81%E8%A7%92%E8%89%B2-Special-Ecosystem-Roles"><span class="toc-text">十二、特殊生态角色 (Special Ecosystem Roles)</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
+    <!-- 同分类文章 -->
+    
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-folder"></i>
+        <span>CATEGORY POSTS</span>
+      </div>
+      <div class="section-content">
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%B9%BF%E5%91%8A%EF%BC%882%EF%BC%89-%E7%A9%BF%E5%B1%B1%E7%94%B2%E5%B9%BF%E5%91%8A%E8%A7%92%E8%89%B2%E5%92%8C%E6%8A%80%E6%9C%AF/">广告（2）-穿山甲广告角色和技术</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%B9%BF%E5%91%8A%EF%BC%885%EF%BC%89-%E5%B9%BF%E5%91%8A%E5%8D%8F%E8%AE%AE%E5%92%8C%E6%A0%87%E5%87%86/">广告（5）-广告协议和标准</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%B9%BF%E5%91%8A%EF%BC%884%EF%BC%89-%E5%B9%BF%E5%91%8A%E7%9A%84%E4%BA%A4%E6%98%93%E6%A8%A1%E5%BC%8F/">广告（4）-广告的交易模式</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%B9%BF%E5%91%8A%EF%BC%881%EF%BC%89-%E5%B9%BF%E5%91%8A%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD/">广告（1）-广告相关的概念和术语</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%B9%BF%E5%91%8A%EF%BC%887%EF%BC%89-%E5%B9%BF%E5%91%8A%E5%BD%92%E5%9B%A0%E5%92%8C%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95/">广告（7）-广告归因和评估方法</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%B9%BF%E5%91%8A%EF%BC%886%EF%BC%89-%E5%B9%BF%E5%91%8A%E4%BC%98%E5%8C%96%E5%92%8C%E5%87%BA%E4%BB%B7%E7%AD%96%E7%95%A5/">广告（6）-广告优化和出价策略</a>
+          </div>
+        
+      </div>
+    </div>
+    
+    
+    <!-- 标签列表 -->
+    
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-tags"></i>
+        <span>ARTICLE TAGS</span>
+      </div>
+      <div class="section-content">
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../../../../tags/%E5%B9%BF%E5%91%8A/">广告</a>
+            <span class="count">(7)</span>
+          </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- 主要内容区域 -->
+  <div class="editor-content">
+    <div class="tab-bar">
+      <div class="tab active">
+        <i class="fas fa-file-alt"></i>
+        <span>广告（3）-广告相关的角色.md</span>
+      </div>
+    </div>
+    
+    <div class="content-area">
+      <article class="post-content">
+        <div class="post-header">
+          <h1>广告（3）-广告相关的角色</h1>
+          <div class="post-meta">
+            <span class="date">
+              <i class="fas fa-calendar-alt"></i>
+              2026-02-19
+            </span>
+                        
+              <span class="categories">
+                <i class="fas fa-folder"></i>
+                <div class="categories-list">
+                  <ul class="category-item-post-list"><li class="category-item-post-list-item"><a class="category-item-post-list-link" href="../../../../categories/%E5%B9%BF%E5%91%8A/">广告</a></li></ul>
+                </div>
+              </span>
+            
+            
+              <span class="tags">
+                <i class="fas fa-tags"></i>
+                <div class="tags-list">
+                  <ul class="tag-item-post-list" itemprop="keywords"><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../../../../tags/%E5%B9%BF%E5%91%8A/" rel="tag">广告</a></li></ul>
+                </div>
+              </span>
+            
+          </div>
+        </div>
+        
+        <div class="post-body vscode-markdown">
+          <h1 id="广告系统生态角色列表"><a href="#广告系统生态角色列表" class="headerlink" title="广告系统生态角色列表"></a>广告系统生态角色列表</h1><h2 id="一、需求侧角色-Buy-Side"><a href="#一、需求侧角色-Buy-Side" class="headerlink" title="一、需求侧角色 (Buy-Side)"></a>一、需求侧角色 (Buy-Side)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>术语</th>
+<th>定义</th>
+<th>代表厂商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.1</td>
+<td><strong>Advertiser (广告主)</strong></td>
+<td>出钱投放广告的企业或个人</td>
+<td>所有品牌方</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td><strong>DSP (Demand-Side Platform)</strong></td>
+<td>需求方平台，代表广告主自动购买广告流量</td>
+<td>The Trade Desk、DV360、Xandr</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td><strong>TD&#x2F;ATD (Trading Desk)</strong></td>
+<td>程序化交易台，为大型广告主统一管理多个DSP</td>
+<td>阳狮、电通、WPP旗下交易台</td>
+</tr>
+<tr>
+<td>1.4</td>
+<td><strong>Agency (广告代理公司)</strong></td>
+<td>代表广告主策划、执行广告活动的专业服务商</td>
+<td>奥美、李奥贝纳、蓝标</td>
+</tr>
+<tr>
+<td>1.5</td>
+<td><strong>In-House Media Team (自建媒体团队)</strong></td>
+<td>广告主内部自建程序化投放团队</td>
+<td>大型品牌自建团队</td>
+</tr>
+<tr>
+<td>1.6</td>
+<td><strong>Media Buying Platform (媒介购买平台)</strong></td>
+<td>整合多渠道媒介购买的SaaS平台</td>
+<td>各种媒介管理SaaS</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="二、供给侧角色-Sell-Side"><a href="#二、供给侧角色-Sell-Side" class="headerlink" title="二、供给侧角色 (Sell-Side)"></a>二、供给侧角色 (Sell-Side)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>术语</th>
+<th>定义</th>
+<th>代表厂商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2.1</td>
+<td><strong>Publisher (媒体&#x2F;发布商)</strong></td>
+<td>拥有流量的网站、App开发者</td>
+<td>各类媒体、内容平台</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td><strong>SSP (Supply-Side Platform)</strong></td>
+<td>供应方平台，代表媒体自动售卖广告流量</td>
+<td>Magnite、PubMatic、Xandr</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td><strong>Ad Server-Sell (卖方广告服务器)</strong></td>
+<td>媒体侧广告投放与库存管理系统</td>
+<td>Google Ad Manager、Freewheel</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td><strong>Ad Network (广告网络)</strong></td>
+<td>聚合多个媒体流量的传统广告聚合平台</td>
+<td>Google AdSense、Taboola、Outbrain</td>
+</tr>
+<tr>
+<td>2.5</td>
+<td><strong>Header Bidding Wrapper (首价竞价封装器)</strong></td>
+<td>帮助发布商并行调用多个SSP&#x2F;DSP实现公平竞价</td>
+<td>Prebid.js、Amazon UAM</td>
+</tr>
+<tr>
+<td>2.6</td>
+<td><strong>Ad Inventory Management (广告库存管理系统)</strong></td>
+<td>管理媒体广告位库存、排期、定价</td>
+<td>各类库存管理SaaS</td>
+</tr>
+<tr>
+<td>2.7</td>
+<td><strong>Yield Optimization Platform (收益优化平台)</strong></td>
+<td>帮助发布商最大化广告收益</td>
+<td>Ezoic、Mediavine、AdThrive</td>
+</tr>
+<tr>
+<td>2.8</td>
+<td><strong>Content Management System (CMS)</strong></td>
+<td>内容管理系统，影响广告位布局</td>
+<td>WordPress、Drupal</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="三、交易侧角色-Trading-Exchange"><a href="#三、交易侧角色-Trading-Exchange" class="headerlink" title="三、交易侧角色 (Trading&#x2F;Exchange)"></a>三、交易侧角色 (Trading&#x2F;Exchange)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>术语</th>
+<th>定义</th>
+<th>代表厂商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3.1</td>
+<td><strong>ADX (Ad Exchange)</strong></td>
+<td>广告交易平台，撮合DSP与SSP的中立交易市场</td>
+<td>Google AdX、Xandr、OpenX</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td><strong>PMP (Private Marketplace)</strong></td>
+<td>私有交易市场，邀请制优质流量交易</td>
+<td>各大ADX均提供PMP功能</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td><strong>PG (Programmatic Guaranteed)</strong></td>
+<td>程序化保量，保证曝光量+程序化效率</td>
+<td>各大DSP&#x2F;SSP支持</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td><strong>OpenDirect</strong></td>
+<td>IAB标准的程序化直接交易协议</td>
+<td>IAB Tech Lab标准</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td><strong>SPO Provider (Supply Path Optimization)</strong></td>
+<td>供应路径优化服务，减少中间环节损耗</td>
+<td>The Trade Desk SPO、Magnite SPO</td>
+</tr>
+<tr>
+<td>3.6</td>
+<td><strong>Bidder Infrastructure (竞价基础设施)</strong></td>
+<td>提供实时竞价技术底层服务</td>
+<td>OpenX、Magnite基础设施</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="四、数据层角色-Data-Layer"><a href="#四、数据层角色-Data-Layer" class="headerlink" title="四、数据层角色 (Data Layer)"></a>四、数据层角色 (Data Layer)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>术语</th>
+<th>定义</th>
+<th>代表厂商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>4.1</td>
+<td><strong>DMP (Data Management Platform)</strong></td>
+<td>数据管理平台，存储用户标签、提供人群定向能力（侧重第三方数据）</td>
+<td>Adobe Audience Manager、Oracle DMP</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td><strong>CDP (Customer Data Platform)</strong></td>
+<td>客户数据平台，整合第一方数据，构建统一客户视图</td>
+<td>Segment、Tealium、Salesforce CDP</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td><strong>Clean Room (数据洁净室)</strong></td>
+<td>隐私安全的数据协作环境，多方数据匹配不暴露原始数据</td>
+<td>Google Ads Data Hub、Amazon Marketing Cloud、InfoSum、Habu</td>
+</tr>
+<tr>
+<td>4.4</td>
+<td><strong>Identity Resolution Provider (身份解析服务商)</strong></td>
+<td>身份识别与跨设备匹配服务</td>
+<td>LiveRamp、The Trade Desk UID2.0、Zeotap</td>
+</tr>
+<tr>
+<td>4.5</td>
+<td><strong>Data Onboarding Service (数据导入服务)</strong></td>
+<td>将线下数据导入数字广告系统</td>
+<td>LiveRamp、InfoSum</td>
+</tr>
+<tr>
+<td>4.6</td>
+<td><strong>Audience Marketplace (受众数据市场)</strong></td>
+<td>第三方受众数据交易平台</td>
+<td>Oracle Data Cloud、LiveRamp Marketplace</td>
+</tr>
+<tr>
+<td>4.7</td>
+<td><strong>First-Party Data Platform (第一方数据平台)</strong></td>
+<td>帮助广告主构建、激活自有数据资产</td>
+<td>Zero-Party Data工具、CDP延伸</td>
+</tr>
+<tr>
+<td>4.8</td>
+<td><strong>Data Enrichment Provider (数据增强服务商)</strong></td>
+<td>为现有数据添加额外维度信息</td>
+<td>Acxiom、Experian</td>
+</tr>
+<tr>
+<td>4.9</td>
+<td><strong>Privacy-Enhancing Technology (PETs)</strong></td>
+<td>隐私增强技术，如差分隐私、联邦学习</td>
+<td>Various隐私计算厂商</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="五、测量与归因层-Measurement-Attribution"><a href="#五、测量与归因层-Measurement-Attribution" class="headerlink" title="五、测量与归因层 (Measurement &amp; Attribution)"></a>五、测量与归因层 (Measurement &amp; Attribution)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>术语</th>
+<th>定义</th>
+<th>代表厂商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5.1</td>
+<td><strong>Attribution Provider (归因服务商)</strong></td>
+<td>衡量用户转化路径中各触点贡献</td>
+<td>AppsFlyer、Adjust、Branch、Kochava</td>
+</tr>
+<tr>
+<td>5.2</td>
+<td><strong>MMP (Mobile Measurement Partner)</strong></td>
+<td>移动测量合作伙伴，专注移动应用归因</td>
+<td>AppsFlyer、Adjust、Branch</td>
+</tr>
+<tr>
+<td>5.3</td>
+<td><strong>Multi-Touch Attribution (MTA)</strong></td>
+<td>多触点归因分析平台</td>
+<td>Various归因平台</td>
+</tr>
+<tr>
+<td>5.4</td>
+<td><strong>Marketing Mix Modeling (MMM)</strong></td>
+<td>营销组合模型，宏观层面衡量各渠道贡献</td>
+<td>Nielsen MMM、Google Meridian、Meta Robyn</td>
+</tr>
+<tr>
+<td>5.5</td>
+<td><strong>Incrementality Testing (增量测试平台)</strong></td>
+<td>衡量广告的真实增量效果，排除自然转化</td>
+<td>Remerge、Statsig、Optimizely</td>
+</tr>
+<tr>
+<td>5.6</td>
+<td><strong>Brand Lift Measurement (品牌提升测量)</strong></td>
+<td>衡量广告对品牌认知、考虑度的影响</td>
+<td>Google Brand Lift、Nielsen Brand Effect</td>
+</tr>
+<tr>
+<td>5.7</td>
+<td><strong>Viewability Measurement (可见度测量)</strong></td>
+<td>专门衡量广告实际可见曝光</td>
+<td>Moat、Comscore Viewability、IAS</td>
+</tr>
+<tr>
+<td>5.8</td>
+<td><strong>Measurement &amp; Analytics Platform (测量与分析平台)</strong></td>
+<td>效果评估与数据洞察工具</td>
+<td>Nielsen、Comscore、Google Analytics</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="六、验证与安全层-Verification-Safety"><a href="#六、验证与安全层-Verification-Safety" class="headerlink" title="六、验证与安全层 (Verification &amp; Safety)"></a>六、验证与安全层 (Verification &amp; Safety)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>术语</th>
+<th>定义</th>
+<th>代表厂商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>6.1</td>
+<td><strong>3PV (Third-Party Verification)</strong></td>
+<td>第三方验证，反作弊与品牌安全</td>
+<td>IAS、DoubleVerify、Moat</td>
+</tr>
+<tr>
+<td>6.2</td>
+<td><strong>Ad Fraud Detection Vendor (广告反欺诈厂商)</strong></td>
+<td>专门检测虚假流量与点击欺诈</td>
+<td>HUMAN (White Ops)、Spider.io、Integral Ad Science</td>
+</tr>
+<tr>
+<td>6.3</td>
+<td><strong>Brand Safety Provider (品牌安全服务商)</strong></td>
+<td>确保广告不出现在不合适内容旁</td>
+<td>Grapeshot、Integral Ad Science、DoubleVerify</td>
+</tr>
+<tr>
+<td>6.4</td>
+<td><strong>Ad Verification Platform (广告验证平台)</strong></td>
+<td>广告展示合规性验证</td>
+<td>Integral Ad Science、DoubleVerify</td>
+</tr>
+<tr>
+<td>6.5</td>
+<td><strong>Content Suitability Provider (内容适宜性服务商)</strong></td>
+<td>评估广告周围内容是否适宜</td>
+<td>Grapeshot、IAS</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="七、隐私与合规层-Privacy-Compliance"><a href="#七、隐私与合规层-Privacy-Compliance" class="headerlink" title="七、隐私与合规层 (Privacy &amp; Compliance)"></a>七、隐私与合规层 (Privacy &amp; Compliance)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>术语</th>
+<th>定义</th>
+<th>代表厂商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>7.1</td>
+<td><strong>CMP (Consent Management Platform)</strong></td>
+<td>同意管理平台，收集用户隐私同意</td>
+<td>OneTrust、Sourcepoint、Cookiebot</td>
+</tr>
+<tr>
+<td>7.2</td>
+<td><strong>Cookieless Identity Solution (无Cookie身份方案)</strong></td>
+<td>Cookie淘汰后的替代身份识别</td>
+<td>Unified ID 2.0、Google Privacy Sandbox、LiveRamp IdentityLink</td>
+</tr>
+<tr>
+<td>7.3</td>
+<td><strong>Privacy Sandbox Provider (隐私沙盒服务)</strong></td>
+<td>Google主导的隐私保护广告技术</td>
+<td>Google Privacy Sandbox Topics&#x2F;FLEDGE</td>
+</tr>
+<tr>
+<td>7.4</td>
+<td><strong>Data Governance Platform (数据治理平台)</strong></td>
+<td>管理数据使用合规性</td>
+<td>OneTrust、BigID</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="八、创意与内容层-Creative-Content"><a href="#八、创意与内容层-Creative-Content" class="headerlink" title="八、创意与内容层 (Creative &amp; Content)"></a>八、创意与内容层 (Creative &amp; Content)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>术语</th>
+<th>定义</th>
+<th>代表厂商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>8.1</td>
+<td><strong>CrMP (Creative Management Platform)</strong></td>
+<td>创意管理平台，批量生成、测试和优化动态广告素材</td>
+<td>Celtra、Google Web Designer、Bannersnack</td>
+</tr>
+<tr>
+<td>8.2</td>
+<td><strong>DCO (Dynamic Creative Optimization)</strong></td>
+<td>动态创意优化，实时根据用户特征生成个性化创意</td>
+<td>Celtra、Sizmek、Google DCO</td>
+</tr>
+<tr>
+<td>8.3</td>
+<td><strong>AI Creative Generator (AI创意生成平台)</strong></td>
+<td>利用生成式AI批量生产广告素材</td>
+<td>Canva AI、Adobe Firefly、Midjourney for Ads</td>
+</tr>
+<tr>
+<td>8.4</td>
+<td><strong>Creative CDN (创意内容分发网络)</strong></td>
+<td>加速广告素材加载</td>
+<td>各类CDN服务商</td>
+</tr>
+<tr>
+<td>8.5</td>
+<td><strong>Rich Media Provider (富媒体服务商)</strong></td>
+<td>提供交互式广告创意技术</td>
+<td>Google Swiffy、Celtra</td>
+</tr>
+<tr>
+<td>8.6</td>
+<td><strong>Video Ad Platform (视频广告平台)</strong></td>
+<td>视频广告制作与投放</td>
+<td>Brightcove、Kaltura、Vimeo</td>
+</tr>
+<tr>
+<td>8.7</td>
+<td><strong>UGC Platform (用户生成内容平台)</strong></td>
+<td>管理用户生成广告内容</td>
+<td>TINT、Bazaarvoice、Yotpo</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="九、新兴渠道层-Emerging-Channels"><a href="#九、新兴渠道层-Emerging-Channels" class="headerlink" title="九、新兴渠道层 (Emerging Channels)"></a>九、新兴渠道层 (Emerging Channels)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>术语</th>
+<th>定义</th>
+<th>代表厂商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>9.1</td>
+<td><strong>Retail Media Network (RMN)</strong></td>
+<td>零售媒体网络，零售商自有广告平台</td>
+<td>Amazon Advertising、Walmart Connect、阿里妈妈、京东京准通</td>
+</tr>
+<tr>
+<td>9.2</td>
+<td><strong>CTV Platform (Connected TV)</strong></td>
+<td>联网电视广告平台</td>
+<td>Roku、Samsung Ads、Hulu、爱奇艺奇麟</td>
+</tr>
+<tr>
+<td>9.3</td>
+<td><strong>DOOH (Digital Out-of-Home)</strong></td>
+<td>数字户外广告平台</td>
+<td>JCDecaux、Ocean、分众传媒、Broadsign</td>
+</tr>
+<tr>
+<td>9.4</td>
+<td><strong>Audio&#x2F;Podcast Ads Platform (音频&#x2F;播客广告)</strong></td>
+<td>音乐&#x2F;播客程序化广告</td>
+<td>Spotify Ads、网易云音乐、喜马拉雅</td>
+</tr>
+<tr>
+<td>9.5</td>
+<td><strong>Gaming Ads Platform (游戏内广告)</strong></td>
+<td>游戏内程序化广告</td>
+<td>Unity Ads、AppLovin、ironSource、InMobi</td>
+</tr>
+<tr>
+<td>9.6</td>
+<td><strong>Shoppable Ads Platform (可购物广告)</strong></td>
+<td>直接转化型广告</td>
+<td>Instagram Shopping、TikTok Shop、Pinterest Shopping</td>
+</tr>
+<tr>
+<td>9.7</td>
+<td><strong>Influencer Marketing Platform (网红营销平台)</strong></td>
+<td>连接品牌与内容创作者</td>
+<td>Aspire、CreatorIQ、Upfluence、蝉妈妈</td>
+</tr>
+<tr>
+<td>9.8</td>
+<td><strong>Social Commerce Platform (社交电商平台)</strong></td>
+<td>社交媒体内购物广告</td>
+<td>抖音电商、快手电商、微信小店</td>
+</tr>
+<tr>
+<td>9.9</td>
+<td><strong>Search Ads Platform (搜索广告平台)</strong></td>
+<td>搜索引擎广告</td>
+<td>Google Ads、Microsoft Advertising、百度营销</td>
+</tr>
+<tr>
+<td>9.10</td>
+<td><strong>Native Advertising Platform (原生广告平台)</strong></td>
+<td>原生内容形式广告</td>
+<td>Taboola、Outbrain、Revcontent</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="十、基础设施层-Infrastructure"><a href="#十、基础设施层-Infrastructure" class="headerlink" title="十、基础设施层 (Infrastructure)"></a>十、基础设施层 (Infrastructure)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>术语</th>
+<th>定义</th>
+<th>代表厂商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10.1</td>
+<td><strong>Ad Server-Buy (买方广告服务器)</strong></td>
+<td>广告主侧创意管理与追踪</td>
+<td>Google Campaign Manager 360、Sizmek</td>
+</tr>
+<tr>
+<td>10.2</td>
+<td><strong>Tag Management System (标签管理系统)</strong></td>
+<td>管理网站&#x2F;APP上的广告代码部署</td>
+<td>Google Tag Manager、Tealium iQ、Adobe Launch</td>
+</tr>
+<tr>
+<td>10.3</td>
+<td><strong>Server-Side Tracking (服务端追踪)</strong></td>
+<td>应对ITP&#x2F;隐私限制的追踪方案</td>
+<td>Google Server-Side GTM、Segment Protocols</td>
+</tr>
+<tr>
+<td>10.4</td>
+<td><strong>API Management (广告API管理)</strong></td>
+<td>管理各平台广告API集成</td>
+<td>Various API管理平台</td>
+</tr>
+<tr>
+<td>10.5</td>
+<td><strong>Data Pipeline (数据管道)</strong></td>
+<td>广告数据传输与处理基础设施</td>
+<td>Fivetran、Stitch、Airbyte</td>
+</tr>
+<tr>
+<td>10.6</td>
+<td><strong>Cloud Infrastructure (云基础设施)</strong></td>
+<td>广告技术底层云服务</td>
+<td>AWS、Google Cloud、Azure</td>
+</tr>
+<tr>
+<td>10.7</td>
+<td><strong>Real-Time Bidding Infrastructure (实时竞价基础设施)</strong></td>
+<td>底层竞价技术服务</td>
+<td>Various RTB基础设施商</td>
+</tr>
+<tr>
+<td>10.8</td>
+<td><strong>Ad Calling Infrastructure (广告调用基础设施)</strong></td>
+<td>广告请求与响应底层服务</td>
+<td>Various基础设施商</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="十一、服务与支持层-Services-Support"><a href="#十一、服务与支持层-Services-Support" class="headerlink" title="十一、服务与支持层 (Services &amp; Support)"></a>十一、服务与支持层 (Services &amp; Support)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>术语</th>
+<th>定义</th>
+<th>代表厂商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>11.1</td>
+<td><strong>Ad Operations Service (广告运营服务)</strong></td>
+<td>广告投放日常运营管理</td>
+<td>各类广告代运营公司</td>
+</tr>
+<tr>
+<td>11.2</td>
+<td><strong>Ad Consulting (广告咨询服务)</strong></td>
+<td>广告策略与技术咨询</td>
+<td>各类咨询公司</td>
+</tr>
+<tr>
+<td>11.3</td>
+<td><strong>Ad Training &amp; Education (广告培训教育)</strong></td>
+<td>广告技术人才培养</td>
+<td>各类培训机构</td>
+</tr>
+<tr>
+<td>11.4</td>
+<td><strong>Ad Legal &amp; Compliance (广告法律合规)</strong></td>
+<td>广告法律与合规服务</td>
+<td>各类律师事务所</td>
+</tr>
+<tr>
+<td>11.5</td>
+<td><strong>Ad Insurance (广告保险)</strong></td>
+<td>广告投放风险保险</td>
+<td>各类保险公司</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="十二、特殊生态角色-Special-Ecosystem-Roles"><a href="#十二、特殊生态角色-Special-Ecosystem-Roles" class="headerlink" title="十二、特殊生态角色 (Special Ecosystem Roles)"></a>十二、特殊生态角色 (Special Ecosystem Roles)</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>术语</th>
+<th>定义</th>
+<th>代表厂商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>12.1</td>
+<td><strong>Walled Garden (围墙花园)</strong></td>
+<td>封闭生态平台，自有流量+数据+投放系统闭环</td>
+<td>Google、Meta、Amazon、TikTok、微信广告、抖音广告</td>
+</tr>
+<tr>
+<td>12.2</td>
+<td><strong>Ad Blocking Solution (广告拦截解决方案)</strong></td>
+<td>用户端广告拦截工具</td>
+<td>AdBlock Plus、uBlock Origin</td>
+</tr>
+<tr>
+<td>12.3</td>
+<td><strong>Acceptable Ads Program (可接受广告计划)</strong></td>
+<td>允许部分非侵入式广告通过拦截器</td>
+<td>AdBlock Plus可接受广告</td>
+</tr>
+<tr>
+<td>12.4</td>
+<td><strong>Ad Standards Organization (广告标准组织)</strong></td>
+<td>制定广告行业标准</td>
+<td>IAB、MRC、Ads.txt倡议</td>
+</tr>
+<tr>
+<td>12.5</td>
+<td><strong>Industry Association (行业协会)</strong></td>
+<td>广告行业自律组织</td>
+<td>中国广告协会、IAB China</td>
+</tr>
+<tr>
+<td>12.6</td>
+<td><strong>Ad Auction Infrastructure (广告拍卖基础设施)</strong></td>
+<td>底层拍卖机制服务</td>
+<td>Various拍卖技术商</td>
+</tr>
+<tr>
+<td>12.7</td>
+<td><strong>Blockchain Ad Platform (区块链广告平台)</strong></td>
+<td>基于区块链的透明广告交易</td>
+<td>Basic Attention Token、AdEx</td>
+</tr>
+<tr>
+<td>12.8</td>
+<td><strong>Web3&#x2F;NFT Advertising (Web3&#x2F;NFT广告)</strong></td>
+<td>去中心化广告与NFT营销</td>
+<td>Various Web3广告平台</td>
+</tr>
+</tbody></table>
+<hr>
+
+        </div>
+        
+        <!-- 文章导航 - 只在同分类有多篇文章时显示 -->
+        
+        
+        
+        <nav class="post-nav">
+          
+            <a class="prev" href="../%E5%B9%BF%E5%91%8A%EF%BC%882%EF%BC%89-%E7%A9%BF%E5%B1%B1%E7%94%B2%E5%B9%BF%E5%91%8A%E8%A7%92%E8%89%B2%E5%92%8C%E6%8A%80%E6%9C%AF/">
+              <i class="fas fa-chevron-left"></i>
+              广告（2）-穿山甲广告角色和技术
+            </a>
+          
+          
+            <a class="next" href="../%E5%B9%BF%E5%91%8A%EF%BC%885%EF%BC%89-%E5%B9%BF%E5%91%8A%E5%8D%8F%E8%AE%AE%E5%92%8C%E6%A0%87%E5%87%86/">
+              广告（5）-广告协议和标准
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          
+        </nav>
+        
+        
+        <!-- 推荐文章 -->
+        
+
+
+<div class="vs-recommended-posts">
+  <div class="vs-recommended-header">
+    <div class="section-header">
+      <i class="fas fa-lightbulb"></i>
+      <span>RELATED POSTS</span>
+    </div>
+  </div>
+  
+  <div class="vs-recommended-grid">
+    
+      <div class="vs-recommended-item" data-index="0" tabindex="0">
+        <a href="../%E5%B9%BF%E5%91%8A%EF%BC%882%EF%BC%89-%E7%A9%BF%E5%B1%B1%E7%94%B2%E5%B9%BF%E5%91%8A%E8%A7%92%E8%89%B2%E5%92%8C%E6%8A%80%E6%9C%AF/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>广告（2）-穿山甲广告角色和技术</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              字节跳动的「穿山甲联盟（Pangolin）」（2018 年推出） → 是广告变现平台，面向 App 开发者提供广告 SDK 接入、流量聚合、程序化变现能力，属于广告技术（AdTech）领域。 该广告平台的技术架构 一、穿山甲（Pangoli...
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  广告
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  Feb 19
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  2 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="1" tabindex="0">
+        <a href="../%E5%B9%BF%E5%91%8A%EF%BC%885%EF%BC%89-%E5%B9%BF%E5%91%8A%E5%8D%8F%E8%AE%AE%E5%92%8C%E6%A0%87%E5%87%86/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>广告（5）-广告协议和标准</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              📋 广告系统协议与标准完整汇总 (全球+中国)一、完整协议与标准总表🔴 核心必备标准 (覆盖率 85%+) 术语 定义 适用范围 覆盖率 发布机构 OpenRTB 2.5&amp;#x2F;3.0 开放实时竞价协议 全球程序化交易 95%+ I...
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  广告
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  Feb 19
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  3 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="2" tabindex="0">
+        <a href="../%E5%B9%BF%E5%91%8A%EF%BC%884%EF%BC%89-%E5%B9%BF%E5%91%8A%E7%9A%84%E4%BA%A4%E6%98%93%E6%A8%A1%E5%BC%8F/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>广告（4）-广告的交易模式</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              🎯 广告交易模式2026年 整理1 - 按交易自动化程度 一级 二级 三级 四级 保量 保价 自动化 说明 传统交易 线下直投 合约广告 Direct Deal ✅ ✅ 0% 人工谈判签约 赞助广告 Sponsorship ✅ ✅ 0% ...
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  广告
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  Feb 19
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  10 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="3" tabindex="0">
+        <a href="../%E5%B9%BF%E5%91%8A%EF%BC%881%EF%BC%89-%E5%B9%BF%E5%91%8A%E7%9B%B8%E5%85%B3%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E6%9C%AF%E8%AF%AD/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>广告（1）-广告相关的概念和术语</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              📚 广告技术术语大全大纲（按类别分类）这里总结一下广告整个业务线相关的一些术语大纲，只做了一个粗分类。 一、【生态角色】 术语 定义 说明 Advertiser 广告主 出钱投放广告的企业或个人 Publisher 媒体 &amp;#x2F; 发...
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  广告
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  Feb 19
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  4 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="4" tabindex="0">
+        <a href="../%E5%B9%BF%E5%91%8A%EF%BC%887%EF%BC%89-%E5%B9%BF%E5%91%8A%E5%BD%92%E5%9B%A0%E5%92%8C%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>广告（7）-广告归因和评估方法</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              广告归因与评估方法终极完整清单一、归因模型类（Attribution Models） 序号 术语 定义 来源&amp;#x2F;应用 1 Last Click 末次点击归因 通用基础 2 First Click 首次点击归因 通用基础 3 Line...
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  广告
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  Feb 19
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  20 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="5" tabindex="0">
+        <a href="../%E5%B9%BF%E5%91%8A%EF%BC%886%EF%BC%89-%E5%B9%BF%E5%91%8A%E4%BC%98%E5%8C%96%E5%92%8C%E5%87%BA%E4%BB%B7%E7%AD%96%E7%95%A5/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>广告（6）-广告优化和出价策略</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              📋 广告出价与优化策略完整全景图 (2026 版)一、竞价机制与拍卖类型 (Auction Mechanisms &amp;amp; Types) 术语 定义 说明 应用场景 First Price Auction (GFP) 第一价格拍卖 最高...
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  广告
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  Feb 19
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  18 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+  </div>
+  
+  <!-- 查看更多 -->
+  <div class="vs-recommended-footer">
+    <a href="../../../../archives/" class="vs-view-more">
+      <i class="fas fa-folder-open"></i>
+      <span>View More Posts</span>
+      <i class="fas fa-chevron-right"></i>
+    </a>
+  </div>
+</div>
+
+<script>
+// 键盘导航支持
+document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('.vs-recommended-item');
+  let currentIndex = -1;
+  
+  // 键盘事件
+  document.addEventListener('keydown', function(e) {
+    if (!items.length) return;
+    
+    if (e.key === 'Tab') {
+      // Tab键导航由浏览器处理
+      return;
+    }
+    
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      
+      // 移除当前高亮
+      if (currentIndex >= 0) {
+        items[currentIndex].classList.remove('vs-focused');
+      }
+      
+      // 更新索引
+      if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % items.length;
+      } else {
+        currentIndex = currentIndex <= 0 ? items.length - 1 : currentIndex - 1;
+      }
+      
+      // 添加新高亮
+      items[currentIndex].classList.add('vs-focused');
+      items[currentIndex].focus();
+    }
+    
+    if (e.key === 'Enter' && currentIndex >= 0) {
+      const link = items[currentIndex].querySelector('a');
+      if (link) link.click();
+    }
+  });
+  
+  // 鼠标悬停时更新当前索引
+  items.forEach((item, index) => {
+    item.addEventListener('mouseenter', function() {
+      currentIndex = index;
+      items.forEach(i => i.classList.remove('vs-focused'));
+      item.classList.add('vs-focused');
+    });
+  });
+});
+</script>
+
+        
+        <!-- 评论区 -->
+        
+  <div class="vs-comments-section">
+    <div class="section-header">
+      <i class="fas fa-comments"></i>
+      <span>COMMENTS</span>
+    </div>
+    
+    
+      <!-- Waline 评论系统 -->
+      <div id="waline"></div>
+      <script>
+        // 加载 Waline CSS
+        const walineCSS = document.createElement('link');
+        walineCSS.rel = 'stylesheet';
+        walineCSS.href = 'https://unpkg.com/@waline/client@v3/dist/waline.css';
+        document.head.appendChild(walineCSS);
+        
+        // 加载 Waline JS
+        const walineScript = document.createElement('script');
+        walineScript.type = 'module';
+        walineScript.onload = function() {
+          // 确保 Waline 加载后再初始化
+          import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(({ init }) => {
+            const waline = init({
+              el: '#waline',
+              serverURL: 'https://vsc4tblackcat1337.vercel.app/',
+              lang: 'zh-CN',
+              locale: {},
+              emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus"],
+              requiredMeta: [],
+              login: 'disable',
+              wordLimit: 0,
+              pageSize: 10,
+              imageUploader: false,
+              highlighter: true,
+              texRenderer: false,
+              search: false,
+              pageview: false,
+              comment: true,
+              copyright: false,
+              
+              // 自动适配主题
+              dark: document.documentElement.getAttribute('data-theme') === 'dark' ? 'auto' : false,
+              
+              // 评论框占位符
+              placeholder: 'Feel free to leave a comment, no login required!',
+              
+              // 元数据配置
+              meta: ['nick', 'mail', 'link'],
+              
+              // 表情配置
+              emojiCDN: 'https://unpkg.com/@waline/emojis@1.2.0/',
+            });
+            
+            // 监听主题变化
+            const observer = new MutationObserver((mutations) => {
+              mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                  // Waline 会自动处理主题切换
+                  if (waline) {
+                    waline.update({ dark: isDark ? 'auto' : false });
+                  }
+                }
+              });
+            });
+            
+            observer.observe(document.documentElement, {
+              attributes: true,
+              attributeFilter: ['data-theme']
+            });
+          });
+        };
+        walineScript.src = 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+        document.body.appendChild(walineScript);
+      </script>
+    
+    
+  </div>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <footer class="footer">
+  <div class="status-bar">
+    <div class="status-item">
+      <i class="fas fa-code-branch"></i>
+      master
+    </div>
+    <div class="status-item">
+      <i class="fas fa-sync"></i>
+      John Doe
+    </div>
+    <div class="status-item">
+      <i class="fas fa-clock"></i>
+      2026-02-19
+    </div>
+    <div class="status-item">
+      Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
+    </div>
+    <div class="status-item github">
+      <a href="#" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- 搜索专用配置 (HEXO_CONFIG 在 scripts.ejs 中统一定义) -->
+    <script>
+      window.VSC4T_SEARCH = {
+        root: "/"
+      };
+    </script>
+
+    <!-- 外部脚本 - 统一使用 cdnjs CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous"></script>
+    <script>if(typeof hljs !== 'undefined') hljs.highlightAll();</script>
+    <!-- 这里可以放置自定义脚本 -->
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  // Apply smooth scroll to non-TOC anchor links
+  document.querySelectorAll('a[href^="#"]:not(.toc-link)').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      // Check if querySelector is valid before using it
+      try {
+        const targetSelector = this.getAttribute('href');
+        // Basic check for potentially invalid selectors (though not exhaustive)
+        if (targetSelector && targetSelector.length > 1) { 
+          const targetElement = document.querySelector(targetSelector);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          } else {
+            console.warn('Smooth scroll target not found:', targetSelector);
+          }
+        } else {
+           console.warn('Invalid href for smooth scroll:', targetSelector);
+        }
+      } catch (error) {
+        console.error('Error during smooth scroll:', error, 'Selector:', this.getAttribute('href'));
+        // Fallback or alternative behavior if needed
+        // For example, try getElementById if it's just an ID
+        const targetId = this.getAttribute('href').slice(1);
+        try {
+            const targetElementById = document.getElementById(decodeURIComponent(targetId));
+            if (targetElementById) {
+                targetElementById.scrollIntoView({ behavior: 'smooth' });
+            }
+        } catch (idError) {
+             console.error('Fallback getElementById also failed:', idError);
+        }
+      }
+    });
+  });
+});
+</script>
+
+<!-- Scripts -->
+<script>
+  // 全局配置 - 包含 i18n 字符串和主题配置
+  window.HEXO_CONFIG = {
+    language: "en",
+    root: "/",
+    
+    theme_switch: {
+      enabled: false,
+      light_start: "06:00",
+      light_end: "18:00"
+    },
+    
+    // Search i18n strings
+    search_placeholder: "Type to search...",
+    search_no_results: "No results found",
+    search_result: "result",
+    search_results: "results",
+    search_results_found: "Found undefined results",
+    search_in: "Search in",
+    search_in_title: "Title",
+    search_in_content: "Content",
+    search_in_tags: "Tags",
+    search_in_categories: "Categories",
+    search_filters: "Search Filters",
+    search_recent: "Recent Searches",
+    search_clear: "Clear",
+    search_loading: "Loading...",
+    search_error: "Error loading search data",
+    // Encryption i18n strings
+    encrypt_badge: "Protected",
+    encrypt_title: "Protected Content",
+    encrypt_description: "Enter the password to unlock this article. The password will be saved locally until you choose to re-encrypt.",
+    encrypt_label: "Password",
+    encrypt_placeholder: "Enter password to unlock",
+    encrypt_button: "Unlock",
+    encrypt_button_loading: "Unlocking...",
+    encrypt_hint: "Press Enter to submit. Password will be remembered on this device.",
+    encrypt_success: "Content unlocked successfully!",
+    encrypt_unlocked_note: "Content unlocked. You can re-encrypt at any time.",
+    encrypt_again: "Re-encrypt",
+    encrypt_wrong_password: "Incorrect password. Please try again.",
+    encrypt_show_password: "Show password",
+    encrypt_hide_password: "Hide password",
+    // Sidebar i18n strings
+    sidebar_about: "About",
+    sidebar_categories: "Categories",
+    sidebar_tags: "Tags",
+    // Post page i18n strings
+    post_toc: "TABLE OF CONTENTS",
+    post_category_posts: "CATEGORY POSTS",
+    post_article_tags: "ARTICLE TAGS"
+  };
+</script>
+
+
+
+<!-- 添加所有需要的脚本 -->
+<script src="../../../../js/search.js"></script>
+<script src="../../../../js/theme-switch.js"></script>
+
+<script src="../../../../js/password-protect.js?v=1771511620562"></script>
+
+    <script>
+      // 移动端菜单切换
+      $(document).ready(function() {
+        var $body = $('body');
+        var $sidebar = $('.sidebar-explorer');
+        var $overlay = $('.sidebar-overlay');
+        var $toggle = $('.mobile-menu-toggle');
+
+        function openSidebar() {
+          $sidebar.addClass('show');
+          $overlay.addClass('show');
+          $toggle.addClass('active');
+          $body.addClass('sidebar-open');
+        }
+
+        function closeSidebar() {
+          $sidebar.removeClass('show');
+          $overlay.removeClass('show');
+          $toggle.removeClass('active');
+          $body.removeClass('sidebar-open');
+        }
+
+        // 汉堡按钮点击切换
+        $toggle.on('click', function(e) {
+          e.stopPropagation();
+          if ($sidebar.hasClass('show')) {
+            closeSidebar();
+          } else {
+            openSidebar();
+          }
+        });
+
+        // 点击遮罩层关闭
+        $overlay.on('click', function() {
+          closeSidebar();
+        });
+
+        // ESC 键关闭
+        $(document).on('keydown', function(e) {
+          if (e.key === 'Escape' && $sidebar.hasClass('show')) {
+            closeSidebar();
+          }
+        });
+
+        // 点击侧边栏内的链接时自动关闭侧边栏，确保锚点跳转正常
+        $sidebar.on('click', 'a', function() {
+          closeSidebar();
+        });
+      });
+    </script>
+  </body>
+</html>
